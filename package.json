@@ -1,0 +1,11 @@
+{
+  "name": "medication-reminder-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "vue": "^3.2.0"
+  },
+  "scripts": {
+    "start": "echo 'No server required for the app. Use the backend server in the server folder.'"
+  }
+}
