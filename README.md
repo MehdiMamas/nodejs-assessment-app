@@ -1,31 +1,34 @@
-# App
+# Medication Reminder App
 
-This repository contains the frontend or client-side code for the Medication Reminder System.
+Vue 3 frontend for a small medication reminder system, built as a take-home assessment. You enter a phone number and press **Trigger Call**; the app asks the backend to place a reminder call to that number.
 
-## Instructions
+The backend is [nodejs-assessment-server](https://github.com/MehdiMamas/nodejs-assessment-server). Both are tied together in the super repo [DTxPlus-assessment](https://github.com/MehdiMamas/DTxPlus-assessment).
 
-1. Clone the repository:
+## How it works
 
-   ```bash
-   git clone <app-repo-url>
-   cd app
-   ```
+`src/App.vue` has one phone number field and one button. The button sends `POST http://localhost:5000/api/call` with `{ "phoneNumber": "..." }` and shows the message the server returns.
 
-2. Install dependencies:
+## Run it
 
-   ```bash
+1. Start the backend first, following the steps in [nodejs-assessment-server](https://github.com/MehdiMamas/nodejs-assessment-server). By default it listens on port 5000.
+2. Clone and install:
+
+   ```sh
+   git clone https://github.com/MehdiMamas/nodejs-assessment-app
+   cd nodejs-assessment-app
    npm install
    ```
 
-3. Start the development server:
+3. Serve the folder with any static server and open `public/index.html`, for example:
 
-   ```bash
-   npm start
+   ```sh
+   python3 -m http.server 3000
    ```
 
-4. Open your browser and navigate to `http://localhost:3000` to view the app.
+   then visit http://localhost:3000/public/. The page loads Vue 3 from a CDN.
 
-## Notes
+Note that `npm start` only prints a reminder that no dev server is configured; this repo has no build step, tests or CI.
 
-- Ensure the backend server is running for full functionality.
-- Update any environment-specific configurations as needed.
+## Tech
+
+Vue 3, plain JavaScript and HTML. Calls a Node.js and Express backend.
